@@ -31,24 +31,25 @@ while True:
 
             secNum = input("Wprowadź DRUGĄ liczbę : \n")
             if secNum == str("exit"):
+                
+                print("Następuje wyłączenie programu.")
                 break
             if secNum == str("reset"): 
                 reset = True
-                        
+            try:                                     
+                if operacja == "+":
+                    rezultat = firstNum + int(secNum)
+                if operacja == "-":
+                    rezultat = firstNum - int(secNum)              
+                if operacja == "*":
+                    rezultat = firstNum * int(secNum)              
+                if operacja == "/":
+                    rezultat = firstNum / int(secNum)              
+                if operacja == "**":
+                    rezultat = firstNum ** int(secNum)
+            except:
                 print("To nie jest liczba!")            
-                continue         
-            
-            if operacja == "+":
-                rezultat = firstNum + int(secNum)
-            if operacja == "-":
-                rezultat = firstNum - int(secNum)              
-            if operacja == "*":
-                rezultat = firstNum * int(secNum)              
-            if operacja == "/":
-                rezultat = firstNum / int(secNum)              
-            if operacja == "**":
-                rezultat = firstNum ** int(secNum)
-
+                continue 
             print('\n Wynik operacji '+ str(firstNum) + operacja + str(secNum) + " = " + str(rezultat)+'\n\n')
             rezultat = None
             reset = True
